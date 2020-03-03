@@ -518,7 +518,7 @@ SpiDev_xfer(SpiDevObject *self, PyObject *args)
 		xferptr[ii].tx_buf = (unsigned long)&txbuf[ii];
 		xferptr[ii].rx_buf = (unsigned long)&rxbuf[ii];
 		xferptr[ii].len = 1;
-		xferptr[ii].delay_usecs = delay;
+		xferptr[ii].delay_usecs = delay_usecs;
 		xferptr[ii].speed_hz = speed_hz ? speed_hz : self->max_speed_hz;
 		xferptr[ii].bits_per_word = bits_per_word ? bits_per_word : self->bits_per_word;
 #ifdef SPI_IOC_WR_MODE32
